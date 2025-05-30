@@ -93,8 +93,8 @@ const Marketplace = () => {
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          product.farmer.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = !categoryFilter || product.category === categoryFilter;
-    const matchesLocation = !locationFilter || product.location === locationFilter;
+    const matchesCategory = !categoryFilter || categoryFilter === "all" || product.category === categoryFilter;
+    const matchesLocation = !locationFilter || locationFilter === "all" || product.location === locationFilter;
     
     return matchesSearch && matchesCategory && matchesLocation;
   });
@@ -142,7 +142,7 @@ const Marketplace = () => {
               <SelectValue placeholder="All Categories" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Categories</SelectItem>
+              <SelectItem value="all">All Categories</SelectItem>
               <SelectItem value="Vegetables">Vegetables</SelectItem>
               <SelectItem value="Fruits">Fruits</SelectItem>
               <SelectItem value="Dairy & Eggs">Dairy & Eggs</SelectItem>
@@ -155,7 +155,7 @@ const Marketplace = () => {
               <SelectValue placeholder="All Locations" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Locations</SelectItem>
+              <SelectItem value="all">All Locations</SelectItem>
               <SelectItem value="California">California</SelectItem>
               <SelectItem value="Iowa">Iowa</SelectItem>
               <SelectItem value="Washington">Washington</SelectItem>
