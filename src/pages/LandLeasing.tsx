@@ -81,8 +81,8 @@ const LandLeasing = () => {
   const filteredListings = landListings.filter(listing => {
     const matchesSearch = listing.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          listing.location.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesLocation = !locationFilter || listing.location.includes(locationFilter);
-    const matchesType = !landTypeFilter || listing.type === landTypeFilter;
+    const matchesLocation = !locationFilter || locationFilter === "all" || listing.location.includes(locationFilter);
+    const matchesType = !landTypeFilter || landTypeFilter === "all" || listing.type === landTypeFilter;
     
     return matchesSearch && matchesLocation && matchesType;
   });
@@ -143,7 +143,7 @@ const LandLeasing = () => {
               <SelectValue placeholder="All Locations" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Locations</SelectItem>
+              <SelectItem value="all">All Locations</SelectItem>
               <SelectItem value="California">California</SelectItem>
               <SelectItem value="Iowa">Iowa</SelectItem>
               <SelectItem value="Arizona">Arizona</SelectItem>
@@ -156,7 +156,7 @@ const LandLeasing = () => {
               <SelectValue placeholder="Land Type" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Types</SelectItem>
+              <SelectItem value="all">All Types</SelectItem>
               <SelectItem value="Cropland">Cropland</SelectItem>
               <SelectItem value="Organic">Organic</SelectItem>
               <SelectItem value="Greenhouse">Greenhouse</SelectItem>
