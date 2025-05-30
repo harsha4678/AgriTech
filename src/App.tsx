@@ -5,6 +5,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { AuthProvider } from "@/hooks/useAuth";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { CartProvider } from "@/context/CartContext";
 import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
@@ -24,30 +26,72 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="light" storageKey="agritech-theme">
-      <CartProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/auth" element={<Auth />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/marketplace" element={<Marketplace />} />
-              <Route path="/land-leasing" element={<LandLeasing />} />
-              <Route path="/nutrition-chatbot" element={<NutritionChatbot />} />
-              <Route path="/weather-advisory" element={<WeatherAdvisory />} />
-              <Route path="/disease-detection" element={<DiseaseDetection />} />
-              <Route path="/blockchain-traceability" element={<BlockchainTraceability />} />
-              <Route path="/crop-management" element={<CropManagement />} />
-              <Route path="/shop" element={<Shop />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </CartProvider>
+    <ThemeProvider defaultTheme="system" storageKey="agritech-theme">
+      <AuthProvider>
+        <CartProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/auth" element={<Auth />} />
+                <Route path="/dashboard" element={
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
+                } />
+                <Route path="/marketplace" element={
+                  <ProtectedRoute>
+                    <Marketplace />
+                  </ProtectedRoute>
+                } />
+                <Route path="/land-leasing" element={
+                  <ProtectedRoute>
+                    <LandLeasing />
+                  </ProtectedRoute>
+                } />
+                <Route path="/nutrition-chatbot" element={
+                  <ProtectedRoute>
+                    <NutritionChatbot />
+                  </ProtectedRoute>
+                } />
+                <Route path="/weather-advisory" element={
+                  <ProtectedRoute>
+                    <WeatherAdvisory />
+                  </ProtectedRoute>
+                } />
+                <Route path="/disease-detection" element={
+                  <ProtectedRoute>
+                    <DiseaseDetection />
+                  </ProtectedRoute>
+                } />
+                <Route path="/blockchain-traceability" element={
+                  <ProtectedRoute>
+                    <BlockchainTraceability />
+                  </ProtectedRoute>
+                } />
+                <Route path="/crop-management" element={
+                  <ProtectedRoute>
+                    <CropManagement />
+                  </ProtectedRoute>
+                } />
+                <Route path="/shop" element={
+                  <ProtectedRoute>
+                    <Shop />
+                  </ProtectedRoute>
+                } />
+                <Route path="/cart" element={
+                  <ProtectedRoute>
+                    <Cart />
+                  </ProtectedRoute>
+                } />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </TooltipProvider>
+        </CartProvider>
+      </AuthProvider>
     </ThemeProvider>
   </QueryClientProvider>
 );
