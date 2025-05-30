@@ -9,6 +9,145 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      crop_entries: {
+        Row: {
+          created_at: string | null
+          crop_id: string
+          description: string | null
+          entry_date: string | null
+          entry_type: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          crop_id: string
+          description?: string | null
+          entry_date?: string | null
+          entry_type: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          crop_id?: string
+          description?: string | null
+          entry_date?: string | null
+          entry_type?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "crop_entries_crop_id_fkey"
+            columns: ["crop_id"]
+            isOneToOne: false
+            referencedRelation: "crops"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      crop_tasks: {
+        Row: {
+          completed_at: string | null
+          created_at: string | null
+          crop_id: string
+          description: string | null
+          id: string
+          priority: string | null
+          status: string | null
+          task_date: string
+          task_name: string
+          user_id: string
+        }
+        Insert: {
+          completed_at?: string | null
+          created_at?: string | null
+          crop_id: string
+          description?: string | null
+          id?: string
+          priority?: string | null
+          status?: string | null
+          task_date: string
+          task_name: string
+          user_id: string
+        }
+        Update: {
+          completed_at?: string | null
+          created_at?: string | null
+          crop_id?: string
+          description?: string | null
+          id?: string
+          priority?: string | null
+          status?: string | null
+          task_date?: string
+          task_name?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "crop_tasks_crop_id_fkey"
+            columns: ["crop_id"]
+            isOneToOne: false
+            referencedRelation: "crops"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      crops: {
+        Row: {
+          created_at: string | null
+          current_stage: string | null
+          expected_harvest: string | null
+          id: string
+          name: string
+          next_task: string | null
+          next_task_date: string | null
+          notes: string | null
+          plot_size: string | null
+          progress: number | null
+          sowing_date: string | null
+          status: string | null
+          updated_at: string | null
+          user_id: string
+          variety: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          current_stage?: string | null
+          expected_harvest?: string | null
+          id?: string
+          name: string
+          next_task?: string | null
+          next_task_date?: string | null
+          notes?: string | null
+          plot_size?: string | null
+          progress?: number | null
+          sowing_date?: string | null
+          status?: string | null
+          updated_at?: string | null
+          user_id: string
+          variety?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          current_stage?: string | null
+          expected_harvest?: string | null
+          id?: string
+          name?: string
+          next_task?: string | null
+          next_task_date?: string | null
+          notes?: string | null
+          plot_size?: string | null
+          progress?: number | null
+          sowing_date?: string | null
+          status?: string | null
+          updated_at?: string | null
+          user_id?: string
+          variety?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
