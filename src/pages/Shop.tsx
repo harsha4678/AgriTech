@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -99,7 +98,7 @@ const Shop = () => {
 
   const filteredItems = shopItems.filter(item => {
     const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = !categoryFilter || item.category === categoryFilter;
+    const matchesCategory = !categoryFilter || categoryFilter === "all" || item.category === categoryFilter;
     return matchesSearch && matchesCategory;
   });
 
@@ -146,7 +145,7 @@ const Shop = () => {
               <SelectValue placeholder="All Categories" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Categories</SelectItem>
+              <SelectItem value="all">All Categories</SelectItem>
               <SelectItem value="Tools">Tools</SelectItem>
               <SelectItem value="Seeds">Seeds</SelectItem>
               <SelectItem value="Fertilizers">Fertilizers</SelectItem>
