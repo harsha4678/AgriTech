@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
+# 🌾 AgriTech — Team Saraswati
 
-## Project info
+![AgriTech Cover](./Cover.png)
 
-**URL**: https://lovable.dev/projects/abca3b92-3290-4f81-9b60-72b86d58cea2
+**Connecting Farmers, Customers, and Landowners for a Smarter Agricultural Future**
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🎥 Demo
 
-**Use Lovable**
+Experience AgriTech in action:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/abca3b92-3290-4f81-9b60-72b86d58cea2) and start prompting.
+The demo video is available in the project directory as `AgriTech -- Team Saraswati.mp4`. Click on the file to watch the video locally.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🌟 Core Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Direct Marketplace**  
+  Buy fresh produce directly from farmers, ensuring better prices for both customers and growers. Transparent listings, secure transactions, and real-time availability.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Plant Disease Detection**  
+  Instantly identify plant diseases by uploading images. Get actionable advice and treatment recommendations powered by AI.
 
-Follow these steps:
+- **Land Leasing Platform**  
+  Farmers can browse available lands for rent, view landlord details, pricing per acre, and lease terms. Landowners can list properties and connect with interested farmers.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **AI Chatbot for Diet & Queries**  
+  Customers can chat with our AI assistant for personalized diet planning and get answers to nutrition-related questions.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **7-Day Weather Forecast & Recommendations**  
+  Access accurate, localized weather forecasts for the week. Receive tailored farming recommendations based on upcoming weather patterns.
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Crop Recommendation Based on Soil Health**  
+  Get crop suggestions based on soil nutrient levels (e.g., Nitrogen, Oxygen, etc.), helping maximize yield and sustainability.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- **Blockchain-Based Food Traceability**  
+  *(Under Development)*  
+  Track the journey of food from farm to consumer using blockchain technology, ensuring transparency and safety in the supply chain.
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🚧 Blockchain Feature — Contributors Welcome!
 
-**Use GitHub Codespaces**
+Our **Blockchain-Based Food Traceability** module is currently under development.  
+If you are interested in blockchain technology and want to help us build a transparent, secure food supply chain, **we welcome your contributions!**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🛠️ Tech Stack
 
-This project is built with:
+- **Frontend:** Next.js, TypeScript, Material-UI, React Query  
+- **Backend:** Node.js, Express, PostgreSQL, Redis  
+- **AI/ML:** Python, TensorFlow, Scikit-learn  
+- **Integrations:** Weather APIs, Market Data APIs  
+- **Blockchain:** Food traceability module (in progress)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 📁 Project Structure
 
-Simply open [Lovable](https://lovable.dev/projects/abca3b92-3290-4f81-9b60-72b86d58cea2) and click on Share -> Publish.
+````plaintext
+src/
+├── components/   # UI building blocks
+├── pages/        # Application routes
+├── services/     # API and business logic
+├── models/       # Data schemas
+├── utils/        # Helper functions
+├── styles/       # Theme and global styles
+└── config/       # App configuration
+````
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🚀 Quick Start
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/Jayanth-0703/AgriTech---Team-Saraswati.git
+   cd AgriTech---Team-Saraswati
+   ```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment**
+   ```bash
+   cp .env.example .env
+   # Edit .env as needed
+   ```
+
+4. **Start the app**
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 🤝 Contributing
+
+We welcome your ideas and code!  
+See our contribution guidelines to get started.
+
+---
+
+## 📜 License
+
+MIT — see [`LICENSE`](LICENSE ) for details.
+
+---
+
+## 👥 Team
+
+- **Project Lead:** Karthikeya
+- **UI/UX Designers**  Harsha , Abhinav
+- **Backend Developers**  Harsha , Jayanth
+- **AI/ML Researchers** Karthikeya , Jayanth
+
+---
+
+## 🙏 Acknowledgments
+
+- Agricultural experts & partners  
+- Data providers  
+- The farming community
+
+---
+
+> **AgriTech — Empowering agriculture, enriching lives.**
+> 
+
+> **AgriTech — From Soil to Plate.**
